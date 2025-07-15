@@ -11,7 +11,7 @@ spar_app/
 │   ├── filtered/         # Filtered and processed JSON data
 │   ├── plan/            # Original store layout PDFs
 │   └── merged_articles.json  # Final merged store data
-├── src/
+├── scripts/
 │   ├── process_pdfs.py   # PDF processing script
 │   ├── process_json.py   # JSON filtering script
 │   ├── merge_json.py     # JSON merging script
@@ -35,14 +35,14 @@ pip install -r requirements.txt
 
 2. Process the data:
 ```bash
-python src/process_pdfs.py
-python src/process_json.py
-python src/merge_json.py
+python scripts/process_pdfs.py
+python scripts/process_json.py
+python scripts/merge_json.py
 ```
 
 3. Generate an optimized shopping path:
 ```bash
-python src/optimize_shopping_path.py
+python scripts/optimize_shopping_path.py
 ```
 
 ## Data Structure
