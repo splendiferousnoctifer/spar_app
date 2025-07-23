@@ -997,7 +997,7 @@ const StoreLayoutVisual: React.FC<StoreLayoutProps> = ({ items, storeData, onIte
       {/* Steps Section - Below Map */}
       <div className="w-full">
         <div className="flex items-center justify-between mb-4">
-          <h3 className="text-lg font-bold text-gray-800">Shopping Steps</h3>
+          <h3 className="text-lg font-bold text-gray-800">Einkaufs-Schritte</h3>
           <div className="flex gap-2">
             <button
               onClick={() => {
@@ -1040,9 +1040,9 @@ const StoreLayoutVisual: React.FC<StoreLayoutProps> = ({ items, storeData, onIte
               <div className="w-8 h-8 rounded-full bg-green-500 text-white flex items-center justify-center text-sm font-bold">
                 ✓
               </div>
-              <h3 className="text-lg font-bold text-gray-800">Shopping Complete!</h3>
+              <h3 className="text-lg font-bold text-gray-800">Einkauf abgeschlossen!</h3>
             </div>
-            <p className="text-gray-600 mb-4">Here's your shopping list summary:</p>
+            <p className="text-gray-600 mb-4">Hier ist Ihre Einkaufslisten-Zusammenfassung:</p>
             
             <div className="space-y-3">
               {items.map((item, index) => (
@@ -1068,7 +1068,7 @@ const StoreLayoutVisual: React.FC<StoreLayoutProps> = ({ items, storeData, onIte
                       ? 'bg-green-100 text-green-700' 
                       : 'bg-yellow-100 text-yellow-700'
                   }`}>
-                    {item.completed ? 'Got it!' : 'Still needed'}
+                    {item.completed ? 'Habe es!' : 'Noch benötigt'}
                   </div>
                 </div>
               ))}
@@ -1076,9 +1076,9 @@ const StoreLayoutVisual: React.FC<StoreLayoutProps> = ({ items, storeData, onIte
             
             <div className="mt-4 pt-4 border-t border-gray-200">
               <div className="flex justify-between text-sm">
-                <span className="text-gray-600">Completed:</span>
+                <span className="text-gray-600">Abgeschlossen:</span>
                 <span className="font-medium text-green-600">
-                  {items.filter(item => item.completed).length} of {items.length}
+                  {items.filter(item => item.completed).length} von {items.length}
                 </span>
               </div>
             </div>

@@ -293,7 +293,7 @@ function App() {
         setShowSuggestions(false);
       } else {
         // Show error or just don't add the item
-        alert('This item is not available in the store. Please select from the suggestions below.');
+        alert('Dieser Artikel ist nicht im Laden verfügbar. Bitte wählen Sie aus den Vorschlägen unten.');
       }
     }
   };
@@ -565,8 +565,8 @@ function App() {
         <div className="inline-flex items-center justify-center mb-4">
           <SparLogo className="w-32 h-20 drop-shadow-lg" />
         </div>
-        <h1 className="text-3xl font-bold text-gray-800 mb-2">Welcome to SPAR</h1>
-        <p className="text-gray-600">Your digital shopping companion</p>
+        <h1 className="text-3xl font-bold text-gray-800 mb-2">Willkommen bei SPAR</h1>
+        <p className="text-gray-600">Ihr digitaler Einkaufsbegleiter</p>
       </div>
 
       {/* Featured Favorites Horizontal Scroll */}
@@ -574,7 +574,7 @@ function App() {
         <div className="mb-8">
           <h2 className="text-xl font-bold text-gray-800 mb-4 flex items-center gap-2">
             <Star className="w-5 h-5 text-yellow-500" />
-            Featured Favorites
+            Beliebte Favoriten
           </h2>
           <div className="flex gap-3 overflow-x-auto pb-4 scrollbar-hide">
             {favorites.slice(0, 10).map((item) => (
@@ -590,15 +590,15 @@ function App() {
                   <button
                     onClick={() => addProductToShoppingList(item)}
                     className="flex-1 px-3 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600 transition-colors text-sm font-medium flex items-center justify-center gap-1"
-                    title="Add to shopping list"
+                    title="Zur Einkaufsliste hinzufügen"
                   >
                     <Plus className="w-4 h-4" />
-                    Add
+                    Hinzufügen
                   </button>
                   <button
                     onClick={() => removeFromFavorites(item.id)}
                     className="px-3 py-2 bg-red-500 text-white rounded-lg hover:bg-red-600 transition-colors text-sm flex items-center justify-center"
-                    title="Remove from favorites"
+                    title="Aus Favoriten entfernen"
                   >
                     <Heart className="w-4 h-4 fill-current" />
                   </button>
@@ -615,8 +615,8 @@ function App() {
           className="bg-white rounded-2xl shadow-lg p-6 hover:shadow-xl transition-all duration-200 hover:scale-105"
         >
           <ShoppingCart className="w-8 h-8 text-red-500 mb-3 mx-auto" />
-          <h3 className="font-bold text-gray-800 mb-1">Shopping List</h3>
-          <p className="text-sm text-gray-600">Create and manage your shopping list</p>
+          <h3 className="font-bold text-gray-800 mb-1">Einkaufsliste</h3>
+          <p className="text-sm text-gray-600">Erstellen und verwalten Sie Ihre Einkaufsliste</p>
         </button>
 
         <button
@@ -624,8 +624,8 @@ function App() {
           className="bg-white rounded-2xl shadow-lg p-6 hover:shadow-xl transition-all duration-200 hover:scale-105"
         >
           <Search className="w-8 h-8 text-red-500 mb-3 mx-auto" />
-          <h3 className="font-bold text-gray-800 mb-1">Product Search</h3>
-          <p className="text-sm text-gray-600">Search and discover SPAR products</p>
+          <h3 className="font-bold text-gray-800 mb-1">Produktsuche</h3>
+          <p className="text-sm text-gray-600">Suchen und entdecken Sie SPAR Produkte</p>
         </button>
 
         <button
@@ -633,8 +633,8 @@ function App() {
           className="bg-white rounded-2xl shadow-lg p-6 hover:shadow-xl transition-all duration-200 hover:scale-105"
         >
           <ChefHat className="w-8 h-8 text-red-500 mb-3 mx-auto" />
-          <h3 className="font-bold text-gray-800 mb-1">Recipes</h3>
-          <p className="text-sm text-gray-600">Discover delicious recipes</p>
+          <h3 className="font-bold text-gray-800 mb-1">Rezepte</h3>
+          <p className="text-sm text-gray-600">Entdecken Sie köstliche Rezepte</p>
         </button>
 
         <button
@@ -642,8 +642,8 @@ function App() {
           className="bg-white rounded-2xl shadow-lg p-6 hover:shadow-xl transition-all duration-200 hover:scale-105"
         >
           <Heart className="w-8 h-8 text-red-500 mb-3 mx-auto" />
-          <h3 className="font-bold text-gray-800 mb-1">My Favorites</h3>
-          <p className="text-sm text-gray-600">{favorites.length} saved products</p>
+          <h3 className="font-bold text-gray-800 mb-1">Meine Favoriten</h3>
+          <p className="text-sm text-gray-600">{favorites.length} gespeicherte Produkte</p>
         </button>
       </div>
     </div>
@@ -654,13 +654,13 @@ function App() {
     <div className="max-w-md mx-auto px-4 py-6">
       <div className="text-center mb-8">
         <ChefHat className="w-16 h-16 text-red-500 mx-auto mb-4" />
-        <h1 className="text-3xl font-bold text-gray-800 mb-2">Recipes</h1>
-        <p className="text-gray-600">Coming soon!</p>
+        <h1 className="text-3xl font-bold text-gray-800 mb-2">Rezepte</h1>
+        <p className="text-gray-600">Demnächst verfügbar!</p>
       </div>
       
       <div className="bg-white rounded-2xl shadow-lg p-8 text-center">
-        <p className="text-gray-500 mb-4">Recipe features will be available soon.</p>
-        <p className="text-sm text-gray-400">Discover delicious recipes and automatically add ingredients to your shopping list.</p>
+        <p className="text-gray-500 mb-4">Rezeptfunktionen werden bald verfügbar sein.</p>
+        <p className="text-sm text-gray-400">Entdecken Sie köstliche Rezepte und fügen Sie automatisch Zutaten zu Ihrer Einkaufsliste hinzu.</p>
       </div>
     </div>
   );
@@ -670,8 +670,8 @@ function App() {
     <div className="max-w-md mx-auto px-4 py-6">
       <div className="text-center mb-8">
         <Heart className="w-16 h-16 text-red-500 mx-auto mb-4" />
-        <h1 className="text-3xl font-bold text-gray-800 mb-2">My Favorites</h1>
-        <p className="text-gray-600">{favorites.length} saved products</p>
+        <h1 className="text-3xl font-bold text-gray-800 mb-2">Meine Favoriten</h1>
+        <p className="text-gray-600">{favorites.length} gespeicherte Produkte</p>
       </div>
 
       {/* Favorites Grid */}
@@ -700,7 +700,7 @@ function App() {
                   className="flex-1 px-4 py-3 bg-green-500 text-white rounded-lg hover:bg-green-600 transition-colors font-medium flex items-center justify-center gap-2"
                 >
                   <Plus className="w-5 h-5" />
-                  Add to Shopping List
+                  Zur Einkaufsliste hinzufügen
                 </button>
                 
                 <button
@@ -717,13 +717,13 @@ function App() {
       ) : (
         <div className="text-center py-12">
           <Heart className="w-16 h-16 text-gray-300 mx-auto mb-4" />
-          <p className="text-gray-500 text-lg mb-2">No favorites yet</p>
-          <p className="text-gray-400 mb-6">Search for products and add them to favorites</p>
+          <p className="text-gray-500 text-lg mb-2">Noch keine Favoriten</p>
+          <p className="text-gray-400 mb-6">Suchen Sie nach Produkten und fügen Sie sie zu Favoriten hinzu</p>
           <button
             onClick={() => setCurrentView('product-search')}
             className="px-6 py-3 bg-red-500 text-white rounded-lg hover:bg-red-600 transition-colors font-medium"
           >
-            Search Products
+            Produkte suchen
           </button>
         </div>
       )}
@@ -734,8 +734,8 @@ function App() {
   const ProductSearchView = () => (
     <div className="max-w-md mx-auto px-4 py-6">
       <div className="text-center mb-8">
-        <h1 className="text-3xl font-bold text-gray-800 mb-2">Product Search</h1>
-        <p className="text-gray-600">Discover and add SPAR products</p>
+        <h1 className="text-3xl font-bold text-gray-800 mb-2">Produktsuche</h1>
+        <p className="text-gray-600">Entdecken und hinzufügen Sie SPAR Produkte</p>
       </div>
 
       {/* Search Bar */}
@@ -746,7 +746,7 @@ function App() {
             type="text"
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
-            placeholder="Search for products..."
+            placeholder="Nach Produkten suchen..."
             autoComplete="off"
             autoFocus
             className="w-full px-4 py-3 pr-10 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent text-gray-700 placeholder-gray-400"
@@ -759,7 +759,7 @@ function App() {
       {searchResults.length > 0 && (
         <div className="bg-white rounded-2xl shadow-lg p-6 mb-6">
           <h2 className="text-xl font-bold text-gray-800 mb-4">
-            Search Results ({searchResults.length})
+            Suchergebnisse ({searchResults.length})
           </h2>
           <div className="space-y-3">
             {searchResults.map((item) => (
@@ -782,7 +782,7 @@ function App() {
                     className="flex-1 px-3 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600 transition-colors flex items-center justify-center gap-2"
                   >
                     <Plus className="w-4 h-4" />
-                    Add to List
+                    Zur Liste hinzufügen
                   </button>
                   
                   <button
@@ -796,12 +796,14 @@ function App() {
                     <Heart className={`w-4 h-4 ${favorites.some(fav => fav.id === item.id) ? 'fill-current' : ''}`} />
                   </button>
                   
+                  {/* Temporarily hidden location button
                   <button
                     className="px-3 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors flex items-center justify-center"
                     title={`Located in: ${getCategoryDisplayName(item.category)} (${item.gang})`}
                   >
                     <MapPin className="w-4 h-4" />
                   </button>
+                  */}
                 </div>
               </div>
             ))}
@@ -813,16 +815,16 @@ function App() {
       {searchQuery.length === 0 && (
         <div className="text-center py-12">
           <Search className="w-16 h-16 text-gray-300 mx-auto mb-4" />
-          <p className="text-gray-500 text-lg mb-2">Search for SPAR products</p>
-          <p className="text-gray-400">Type in the search box to discover products</p>
+          <p className="text-gray-500 text-lg mb-2">Suchen Sie nach SPAR Produkten</p>
+          <p className="text-gray-400">Geben Sie in das Suchfeld ein, um Produkte zu entdecken</p>
         </div>
       )}
 
       {searchQuery.length > 0 && searchResults.length === 0 && (
         <div className="text-center py-12">
           <Search className="w-16 h-16 text-gray-300 mx-auto mb-4" />
-          <p className="text-gray-500 text-lg mb-2">No products found</p>
-          <p className="text-gray-400">Try a different search term</p>
+          <p className="text-gray-500 text-lg mb-2">Keine Produkte gefunden</p>
+          <p className="text-gray-400">Versuchen Sie einen anderen Suchbegriff</p>
         </div>
       )}
     </div>
@@ -835,8 +837,8 @@ function App() {
         <Header />
         <div className="max-w-md mx-auto px-4 py-6">
           <div className="text-center mb-8">
-            <h1 className="text-3xl font-bold text-gray-800 mb-2">Start Shopping</h1>
-            <p className="text-gray-600">Your optimized shopping path</p>
+            <h1 className="text-3xl font-bold text-gray-800 mb-2">Einkaufen starten</h1>
+            <p className="text-gray-600">Ihr optimierter Einkaufsweg</p>
           </div>
 
           <OptimizedShoppingPath 
@@ -856,7 +858,7 @@ function App() {
               className="w-full py-4 bg-gradient-to-r from-red-500 to-red-600 text-white rounded-xl font-medium shadow-lg hover:shadow-xl transition-all duration-200 hover:scale-105 active:scale-95 flex items-center justify-center gap-2"
             >
               <ArrowLeft className="w-5 h-5" />
-              Back to Shopping List
+              Zurück zur Einkaufsliste
             </button>
           </div>
         </div>
@@ -911,8 +913,8 @@ function App() {
         <Header />
         <div className="max-w-md mx-auto px-4 py-6">
           <div className="text-center mb-8">
-            <h1 className="text-3xl font-bold text-gray-800 mb-2">Shopping List</h1>
-            <p className="text-gray-600">Select items from the store inventory</p>
+            <h1 className="text-3xl font-bold text-gray-800 mb-2">Einkaufsliste</h1>
+            <p className="text-gray-600">Wählen Sie Artikel aus dem Ladenbestand</p>
           </div>
 
           {/* Add Item Form */}
@@ -923,7 +925,7 @@ function App() {
                 value={newItem}
                 onChange={(e) => setNewItem(e.target.value)}
                 onFocus={() => newItem.trim().length > 0 && setShowSuggestions(suggestions.length > 0)}
-                placeholder="Search for items in the store..."
+                placeholder="Nach Artikeln im Laden suchen..."
                 className="w-full px-4 py-3 pr-10 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent text-gray-700 placeholder-gray-400"
               />
               <Search className="absolute right-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400" />
@@ -1006,8 +1008,8 @@ function App() {
                 className="w-full py-4 bg-gradient-to-r from-red-500 to-red-600 text-white rounded-xl font-medium shadow-lg hover:shadow-xl transition-all duration-200 hover:scale-105 active:scale-95 flex items-center justify-center gap-2"
               >
                 <MapPin className="w-5 h-5" />
-                Start Shopping
-                <span className="text-sm opacity-75">(Find in Store)</span>
+                Einkaufen starten
+                <span className="text-sm opacity-75">(Im Laden finden)</span>
               </button>
             </div>
           )}
@@ -1018,8 +1020,8 @@ function App() {
           {items.length === 0 && (
             <div className="text-center py-12">
               <ShoppingCart className="w-16 h-16 text-gray-300 mx-auto mb-4" />
-              <p className="text-gray-500 text-lg mb-2">Your shopping list is empty</p>
-              <p className="text-gray-400">Add your first item to get started!</p>
+              <p className="text-gray-500 text-lg mb-2">Ihre Einkaufsliste ist leer</p>
+              <p className="text-gray-400">Fügen Sie Ihren ersten Artikel hinzu, um zu beginnen!</p>
             </div>
           )}
         </div>
