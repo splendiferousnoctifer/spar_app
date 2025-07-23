@@ -1,77 +1,96 @@
-# SPAR Store Layout Optimizer
+# Spar Shopping App
 
-This project processes store layout data and provides an optimized shopping path based on a given shopping list.
+A smart shopping assistant for Spar stores that provides optimized shopping paths and interactive store navigation.
 
-## Directory Structure
+## Features
+
+- **Interactive Store Layout**: Visual map of the Spar store with shelf locations
+- **Optimized Shopping Path**: AI-powered route optimization for efficient shopping
+- **Step-by-Step Navigation**: Guided shopping experience with turn-by-turn directions
+- **Item Tracking**: Check off items as you shop with persistent state
+- **Store Inventory**: Only allows adding items that are actually available in the store
+- **Responsive Design**: Works on desktop and mobile devices
+
+## Live Demo
+
+Visit the live application: [Spar Shopping App](https://splendiferousnoctifer.github.io/spar_app/)
+
+## How It Works
+
+1. **Create Shopping List**: Search and select items from the store inventory
+2. **Get Optimized Path**: The app calculates the most efficient route through the store
+3. **Follow Visual Guide**: Use the interactive map and step-by-step instructions
+4. **Track Progress**: Check off items as you collect them
+
+## Technology Stack
+
+- **Frontend**: React 18 with TypeScript
+- **Styling**: Tailwind CSS
+- **Icons**: Lucide React
+- **Build Tool**: Vite
+- **Deployment**: GitHub Pages
+
+## Development
+
+### Prerequisites
+
+- Node.js 18 or higher
+- npm or yarn
+
+### Installation
+
+```bash
+# Clone the repository
+git clone https://github.com/splendiferousnoctifer/spar_app.git
+cd spar_app
+
+# Install dependencies
+npm install
+
+# Start development server
+npm run dev
+```
+
+### Build for Production
+
+```bash
+npm run build
+```
+
+### Deploy to GitHub Pages
+
+The app automatically deploys to GitHub Pages when you push to the main branch.
+
+## Project Structure
 
 ```
 spar_app/
-├── data/
-│   ├── extracted/        # Extracted data from PDFs
-│   ├── filtered/         # Filtered and processed JSON data
-│   ├── plan/            # Original store layout PDFs
-│   └── merged_articles.json  # Final merged store data
-├── scripts/
-│   ├── process_pdfs.py   # PDF processing script
-│   ├── process_json.py   # JSON filtering script
-│   ├── merge_json.py     # JSON merging script
-│   └── optimize_shopping_path.py  # Shopping path optimization
-└── requirements.txt      # Python dependencies
+├── src/
+│   ├── components/
+│   │   ├── StoreLayoutVisual.tsx    # Interactive store map
+│   │   └── OptimizedShoppingPath.tsx # Shopping path logic
+│   ├── data/
+│   │   └── articles.json            # Store inventory data
+│   └── App.tsx                      # Main application
+├── data/                            # Store layout and product data
+└── scripts/                         # Data processing scripts
 ```
 
-## Processing Pipeline
+## Store Layout
 
-1. `process_pdfs.py`: Extracts text from PDF files in `data/plan/` and saves to `data/extracted/`
-2. `process_json.py`: Filters extracted data and saves to `data/filtered/`
-3. `merge_json.py`: Merges filtered data into a single structured JSON file
-4. `optimize_shopping_path.py`: Uses the merged data to create optimized shopping paths
+The app includes a detailed map of the Spar store with:
+- **Gang corridors** (Gang 1-6) with North/South shelves
+- **Seiten M section** for special items
+- **Entrance and checkout** areas
+- **Optimized walking paths** between sections
 
-## Usage
+## Contributing
 
-1. Install dependencies:
-```bash
-pip install -r requirements.txt
-```
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Submit a pull request
 
-2. Process the data:
-```bash
-python scripts/process_pdfs.py
-python scripts/process_json.py
-python scripts/merge_json.py
-```
+## License
 
-3. Generate an optimized shopping path:
-```bash
-python scripts/optimize_shopping_path.py
-```
-
-## Data Structure
-
-The final merged data (`data/merged_articles.json`) follows this structure:
-```json
-{
-    "Gang X": {
-        "N/S": {
-            "positions": {
-                "E/W": {
-                    "category": ["product1", "product2"]
-                }
-            },
-            "categories": {
-                "full_width_category": ["product3", "product4"]
-            }
-        }
-    },
-    "Seiten M": {
-        "category": ["product5", "product6"]
-    }
-}
-```
-
-## Output Format
-
-The optimized shopping path provides:
-1. Corridor sequence with entry/exit points
-2. Items grouped by category
-3. Clear left/right side indicators
-4. Structured data format for visualization or further processing 
+This project is open source and available under the MIT License. 
