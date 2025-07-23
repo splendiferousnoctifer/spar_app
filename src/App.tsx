@@ -275,15 +275,26 @@ function App() {
 
   const addItem = () => {
     if (newItem.trim()) {
-      const item: ShoppingItem = {
-        id: Date.now().toString(),
-        text: newItem.trim(),
-        completed: false,
-        createdAt: new Date()
-      };
-      setItems(prev => [item, ...prev]);
-      setNewItem('');
-      setShowSuggestions(false);
+      // Only allow adding items that exist in the store
+      const availableItems = getAllGroceryItems();
+      const matchingItem = availableItems.find(item => 
+        item.name.toLowerCase() === newItem.trim().toLowerCase()
+      );
+      
+      if (matchingItem) {
+        const item: ShoppingItem = {
+          id: Date.now().toString(),
+          text: matchingItem.name,
+          completed: false,
+          createdAt: new Date()
+        };
+        setItems(prev => [item, ...prev]);
+        setNewItem('');
+        setShowSuggestions(false);
+      } else {
+        // Show error or just don't add the item
+        alert('This item is not available in the store. Please select from the suggestions below.');
+      }
     }
   };
 
@@ -540,8 +551,7 @@ function App() {
           <p className="font-medium">Meisterprojekt</p>
           <p className="mt-1">
             <span className="opacity-90">Severin Zühlke-Ebner</span>
-            <span className="mx-2 opacity-50">•</span>
-            <span className="opacity-90">Samuel Zühlke</span>
+            
           </p>
         </div>
       </div>
@@ -829,7 +839,16 @@ function App() {
             <p className="text-gray-600">Your optimized shopping path</p>
           </div>
 
-          <OptimizedShoppingPath items={items} storeData={articles} />
+          <OptimizedShoppingPath 
+            items={items} 
+            storeData={articles} 
+            onItemToggle={(itemName, completed) => {
+              const item = items.find(i => i.text === itemName);
+              if (item) {
+                toggleItem(item.id);
+              }
+            }}
+          />
 
           <div className="mt-6">
             <button
@@ -893,31 +912,21 @@ function App() {
         <div className="max-w-md mx-auto px-4 py-6">
           <div className="text-center mb-8">
             <h1 className="text-3xl font-bold text-gray-800 mb-2">Shopping List</h1>
-            <p className="text-gray-600">Add items to your shopping list</p>
+            <p className="text-gray-600">Select items from the store inventory</p>
           </div>
 
           {/* Add Item Form */}
           <div className="bg-white rounded-2xl shadow-lg p-6 mb-6 relative">
-            <div className="flex gap-3">
-              <div className="relative flex-1">
+            <div className="relative">
               <input
                 type="text"
                 value={newItem}
                 onChange={(e) => setNewItem(e.target.value)}
-                onKeyPress={(e) => e.key === 'Enter' && addItem()}
                 onFocus={() => newItem.trim().length > 0 && setShowSuggestions(suggestions.length > 0)}
-                placeholder="Add new item..."
+                placeholder="Search for items in the store..."
                 className="w-full px-4 py-3 pr-10 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent text-gray-700 placeholder-gray-400"
               />
-                <Search className="absolute right-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400" />
-              </div>
-              <button
-                onClick={addItem}
-                disabled={!newItem.trim()}
-                className="px-6 py-3 bg-gradient-to-r from-red-500 to-red-600 text-white rounded-xl font-medium shadow-lg hover:shadow-xl disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-200 hover:scale-105 active:scale-95"
-              >
-                <Plus className="w-5 h-5" />
-              </button>
+              <Search className="absolute right-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400" />
             </div>
             
             {/* Suggestions Dropdown */}
@@ -1003,18 +1012,7 @@ function App() {
             </div>
           )}
           
-          {/* Search More Products Button */}
-          {items.length > 0 && (
-            <div className="mb-6">
-              <button
-                onClick={() => setCurrentView('product-search')}
-                className="w-full py-4 bg-gradient-to-r from-blue-500 to-blue-600 text-white rounded-xl font-medium shadow-lg hover:shadow-xl transition-all duration-200 hover:scale-105 active:scale-95 flex items-center justify-center gap-2"
-              >
-                <Search className="w-5 h-5" />
-                Search More Products
-              </button>
-            </div>
-          )}
+
 
           {/* Empty State */}
           {items.length === 0 && (

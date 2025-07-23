@@ -1,5 +1,6 @@
 import React from 'react';
 import { MapPin, ArrowRight } from 'lucide-react';
+import StoreLayoutVisual from './StoreLayoutVisual';
 
 // Types
 interface Location {
@@ -251,21 +252,25 @@ class StoreOptimizer {
 }
 
 interface Props {
-  items: Array<{ text: string }>;
+  items: Array<{ text: string; completed?: boolean }>;
   storeData: any;
+  onItemToggle?: (itemName: string, completed: boolean) => void;
 }
 
-const OptimizedShoppingPath: React.FC<Props> = ({ items, storeData }) => {
+const OptimizedShoppingPath: React.FC<Props> = ({ items, storeData, onItemToggle }) => {
   const optimizer = new StoreOptimizer(storeData);
   const optimizedPath = optimizer.optimizeShoppingPath(items.map(item => item.text));
 
   return (
     <div className="space-y-6">
-      {/* Path Overview */}
-      <div className="bg-white rounded-2xl shadow-lg p-6">
+      {/* Visual Store Layout */}
+      <StoreLayoutVisual items={items} storeData={storeData} onItemToggle={onItemToggle} />
+      
+      {/* Path Overview - Hidden */}
+      {/* <div className="bg-white rounded-2xl shadow-lg p-6">
         <h2 className="text-xl font-bold text-gray-800 mb-4 flex items-center gap-2">
           <MapPin className="w-5 h-5 text-red-500" />
-          Shopping Path
+          Optimized Shopping Path
         </h2>
         <div className="flex items-center gap-2 overflow-x-auto pb-4 scrollbar-hide">
           {optimizedPath.corridors.map((corridor, index) => (
@@ -279,10 +284,10 @@ const OptimizedShoppingPath: React.FC<Props> = ({ items, storeData }) => {
             </React.Fragment>
           ))}
         </div>
-      </div>
+      </div> */}
 
-      {/* Corridor Details */}
-      <div className="space-y-4">
+      {/* Corridor Details - Hidden */}
+      {/* <div className="space-y-4">
         {optimizedPath.corridors.map((corridor) => (
           <div key={corridor.name} className="bg-white rounded-2xl shadow-lg p-6">
             <div className="flex items-center justify-between mb-4">
@@ -314,7 +319,7 @@ const OptimizedShoppingPath: React.FC<Props> = ({ items, storeData }) => {
             </div>
           </div>
         ))}
-      </div>
+      </div> */}
 
       {/* Not Found Items */}
       {optimizedPath.notFoundItems.length > 0 && (

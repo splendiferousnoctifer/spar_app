@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2381 2063">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #4f504f;
+        stroke: #9fa1a4;
+        stroke-miterlimit: 10;
+        stroke-width: 5px;
+      }
+
+      .cls-2 {
+        fill: #ededee;
+      }
+    </style>
+  </defs>
+  <g id="shelves">
+    <rect class="cls-2" x="200" width="1800" height="100"/>
+    <rect class="cls-2" x="200" y="200" width="1800" height="100"/>
+    <rect class="cls-2" x="200" y="300" width="1800" height="100"/>
+    <rect class="cls-2" x="200" y="500" width="1800" height="100"/>
+    <rect class="cls-2" x="200" y="600" width="1800" height="100"/>
+    <rect class="cls-2" x="200" y="800" width="1800" height="100"/>
+    <rect class="cls-2" x="200" y="900" width="1800" height="100"/>
+    <rect class="cls-2" x="200" y="1100" width="1800" height="100"/>
+    <rect class="cls-2" x="200" y="1200" width="1800" height="100"/>
+    <rect class="cls-2" x="200" y="1400" width="1800" height="100"/>
+    <rect class="cls-2" x="200" y="1500" width="1800" height="100"/>
+    <rect class="cls-2" x="200" y="1700" width="1800" height="100"/>
+    <rect class="cls-2" x="-850" y="850" width="1800" height="100" transform="translate(950 850) rotate(90)"/>
+  </g>
+  <g id="walls">
+    <line class="cls-1" x1="2000" y1="300" x2="200" y2="300"/>
+    <line class="cls-1" x1="200" y1="600" x2="2000" y2="600"/>
+    <line class="cls-1" x1="2000" y1="900" x2="200" y2="900"/>
+    <line class="cls-1" x1="2000" y1="1200" x2="200" y2="1200"/>
+    <line class="cls-1" x1="2000" y1="1500" x2="200" y2="1500"/>
+  </g>
+  <g id="turnpoints">
+    <circle cx="155" cy="155" r="5"/>
+    <circle cx="155" cy="1655" r="5"/>
+    <circle cx="155" cy="1355" r="5"/>
+    <circle cx="155" cy="1055" r="5"/>
+    <circle cx="155" cy="755" r="5"/>
+    <circle cx="155" cy="455" r="5"/>
+    <circle cx="155" cy="1855" r="5"/>
+    <circle cx="2055" cy="155" r="5"/>
+    <circle cx="2055" cy="1655" r="5"/>
+    <circle cx="2055" cy="1355" r="5"/>
+    <circle cx="2055" cy="1055" r="5"/>
+    <circle cx="2055" cy="755" r="5"/>
+    <circle cx="2055" cy="455" r="5"/>
+    <circle cx="2055" cy="1855" r="5"/>
+    <circle cx="1750" cy="1855" r="5"/>
+    <circle cx="1150" cy="1855" r="5"/>
+  </g>
+  <rect id="eingang" x="1500" y="1900" width="500" height="100"/>
+  <rect id="kassa" x="900" y="1900" width="500" height="100"/>
+</svg>
